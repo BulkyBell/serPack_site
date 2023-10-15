@@ -1,0 +1,81 @@
+<h2 class="content-block" style="display: inline">Stock Actual</h2>
+<h6 class="content-block" style="display: inline"> Propietario Serpack, S.L.</h6>
+<dx-data-grid class="dx-card wide-card"
+  [dataSource]="dataSource"
+  [showBorders]="false"
+  [focusedRowEnabled]="true"
+  [focusedRowIndex]="0"
+  [columnAutoWidth]="true"
+  [columnHidingEnabled]="true">
+
+  <dxo-paging [pageSize]="20"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+  <dxi-column
+    dataField="NUMLOTPRO"
+    [width]="190"
+    caption="Lote"
+    [hidingPriority]="7">
+  </dxi-column>
+
+  <dxi-column
+    dataField="SUFIJO"
+    [width]="90"
+    caption="Sufijo"
+    [allowSorting]="false"
+    [hidingPriority]="3">
+  </dxi-column>
+
+  <dxi-column
+    dataField="ARTNOM"
+    caption="Artículo"
+    [width]="290"
+    [hidingPriority]="4">
+  </dxi-column>
+  
+  <dxi-column
+    dataField="FECHACREA"
+    caption="Fecha Entrada"
+    dataType="date"
+    [width]="160"
+    [hidingPriority]="1">
+  </dxi-column>
+
+  <dxi-column
+    dataField="ANCHO"
+    caption="Ancho"
+    [allowSorting]="false"
+    dataType="number"
+    [width]="120"
+    [hidingPriority]="2"
+    [format]= "formatMM">
+  </dxi-column>
+  
+  <dxi-column
+    dataField="PESOINICIAL"
+    caption="Peso Inicial"
+    [allowSorting]="false"
+    dataType="number"
+    [width]="120"
+    [format]= "formatKG"
+    [hidingPriority]="5">
+  </dxi-column>
+  
+  <dxi-column
+    dataField="PESOACTUAL"
+    caption="Peso Actual"
+    [allowSorting]="false"
+    dataType="number"
+    [format]= "formatKG"
+    [width]="120"
+    [hidingPriority]="6">
+  </dxi-column>
+
+  <dxi-column
+    caption=""
+    [allowSorting]="false"
+    [hidingPriority]="0">
+  </dxi-column>
+
+</dx-data-grid>

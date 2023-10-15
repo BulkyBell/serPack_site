@@ -1,0 +1,22 @@
+{
+  "items": [
+      {
+          "key": "$base-accent",
+          "value": "rgba(54, 145, 68, 1)"
+      },
+      {
+          "key": "$base-border-radius",
+          "value": "14px"
+      },
+      {
+          "key": "$base-font-family",
+          "value": "\"Roboto\", \"RobotoFallback\", \"Noto Kufi Arabic\", \"Helvetica\", \"Arial\", sans-serif"
+      }
+  ],
+  "baseTheme": "material.lime.light",
+  "outputColorScheme": "custom-scheme",
+  "makeSwatch": false,
+  "version": "22.2.4",
+  "widgets": [],
+  "removeExternalResources": false
+}
