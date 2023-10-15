@@ -27,6 +27,10 @@ export const navigation = [
       {
         text: 'Consumo de Bobinas',
         path: '/qry3'
+      },
+      {
+        text: 'Ofertas',
+        Path: '/qry4'
       }
     ]
   }

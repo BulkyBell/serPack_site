@@ -9,6 +9,7 @@ import { Qry1Component } from './pages/qry1/qry1.component';
 import { Qry2Component } from './pages/qry2/qry2.component';
 import { Qry3Component } from './pages/qry3/qry3.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { Qry4Component } from './pages/qry4/qry4.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
     component: Qry3Component,
     canActivate: [ AuthGuardService ]
   },  
+  {
+    path: 'qry4',
+    component: Qry4Component,
+    canActivate: [ AuthGuardService]
+  },
   {
     path: 'tasks',
     component: TasksComponent,
