@@ -8,6 +8,7 @@ import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { oDataService } from '@shared';
 import { AppRoutingModule } from './app-routing.module';
+import { Qry4Component } from './pages/qry4/qry4.component';
 
 
 @NgModule({

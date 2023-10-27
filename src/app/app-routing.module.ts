@@ -8,8 +8,9 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { Qry1Component } from './pages/qry1/qry1.component';
 import { Qry2Component } from './pages/qry2/qry2.component';
 import { Qry3Component } from './pages/qry3/qry3.component';
-import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { Qry4Component } from './pages/qry4/qry4.component';
+import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
   {
     path: 'qry4',
     component: Qry4Component,
-    canActivate: [ AuthGuardService]
+    canActivate: [ AuthGuardService ]
   },
   {
     path: 'tasks',
@@ -77,6 +78,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, Qry1Component, Qry2Component, Qry3Component]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, Qry1Component, Qry2Component, Qry3Component, Qry4Component]
 })
 export class AppRoutingModule { }
