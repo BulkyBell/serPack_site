@@ -30,7 +30,7 @@ export const navigation = [
       },
       {
         text: 'Ofertas',
-        Path: '/qry4'
+        path: '/qry4'
       }
     ]
   }
