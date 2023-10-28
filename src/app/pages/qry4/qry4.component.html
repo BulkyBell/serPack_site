@@ -1,4 +1,4 @@
-<h2 class="content-block" style="display: inline">Descuentos</h2>
+<h2 class="content-block" style="display: inline">Ofertas aplicables</h2>
 <h6 class="content-block" style="display: inline"> Propietario Serpack, S.L.</h6>
 
 
@@ -16,53 +16,43 @@
   <dxo-filter-row [visible]="true"></dxo-filter-row>
 
   <dxi-column
-    dataField="NUMLOTPRO"
+    dataField="cbbo_reference"
     [width]="190"
-    caption="Lote"
+    caption="Referencia"
     [hidingPriority]="6">
   </dxi-column>
 
   <dxi-column
-    dataField="ARTNOM"
-    caption="Artículo"
-    [width]="290"
+    dataField="dbbo_desc"
+    caption="Descripción"
+    [width]="390"
     [hidingPriority]="4">
   </dxi-column>
 
   <dxi-column
-    dataField="FECHACREA"
-    caption="Fecha Entrada"
+    dataField="cbbo_dateini"
+    caption="Fecha Inicio"
     dataType="date"
-    [width]="160"
+    [width]="190"
     [hidingPriority]="1">
   </dxi-column>
 
   <dxi-column
-    dataField="CONSUMIDO"
-    caption="Fecha Consumo"
+    dataField="cbbo_dateend"
+    caption="Fecha Fin"
     dataType="date"
-    [width]="160"
+    [width]="190"
     [hidingPriority]="3">
   </dxi-column>
 
   <dxi-column
-    dataField="ANCHO"
-    caption="Ancho"
+    dataField="cbbo_toendstock"
+    caption="Hasta Fin de Exístencias"
     [allowSorting]="false"
-    dataType="number"
-    [width]="120"
-    [format]= "formatMM"
+    dataType="boolean"
+    [width]="200"
+    
     [hidingPriority]="2">
-  </dxi-column>
-
-  <dxi-column
-    dataField="PESOINICIAL"
-    caption="Peso Inicial"
-    [allowSorting]="false"
-    dataType="number"
-    [format]= "formatKG"
-    [width]="120"
-    [hidingPriority]="5">
   </dxi-column>
   
   <dxi-column

@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "scripts": {
     "ng": "ng",
-    "start:local": "ng serve --configuration=local --open",
+    "start:local": "ng serve --host=0.0.0.0 --configuration=local --open",
     "start:production": "ng serve --configuration=production --open",
     "build:prod": "ng build --configuration=production",
     "test": "ng test",

@@ -1,8 +1,14 @@
+import { HttpHeaders } from '@angular/common/http';
 // import { StoreService, AppConfigService } from '@core';
 import { Component } from '@angular/core';
 import 'devextreme/data/odata/store';
 import { oDataService } from '@shared';
 import { AppConfigService } from '@core';
+// import { Store } from 'devextreme/data/abstract_store';
+// import ODataContext from "devextreme/data/odata/context";
+//import ODataStore from 'devextreme/data/odata/store';
+import DataSource from 'devextreme/data/data_source';
+import { TokenService } from '@core';
 
 @Component({
   templateUrl: 'qry4.component.html',
@@ -11,33 +17,42 @@ import { AppConfigService } from '@core';
 export class Qry4Component { 
   dataSource: any;
   private apiUrl: string;
-  formatMM: ",000 mm";
-  formatKG: ",000 kg";
+  private rgtoken: string;
 
-  constructor(private appConfigService: AppConfigService){
+  constructor(private appConfigService: AppConfigService, protected tokenService: TokenService){
     this.apiUrl = this.getApiUrl();
-    this.dataSource = {
+    this.rgtoken = this.tokenService.getToken()!;
+    this.dataSource = new DataSource({   
       store: {
         type: 'odata',
-        key: 'UD',
-        url: this.apiUrl + 'api_odata/qry4'
+        key: 'cbbo_id',
+        url: this.apiUrl + 'api_cbodata/cb_basicoffers?$format=JSON',
+        withCredentials: false,
+        beforeSend: (e) => {
+          if ((this.rgtoken != null) && (this.rgtoken.length > 0)) {
+            e.headers = {
+              "Access-Token": this.rgtoken,
+              "Content-Type": 'application/json'
+            };
+          };
+        }
       },
       select: [
-        'ID',
-        'REFERENCE',
-        'DESC',
-        'PRICE',
-        'DATEINI',
-        'DATEEND',
-        'TOENDSTOCK',
-        'APPLYTOLIST',
-        'IMAGE',
-        'CREATOR',
-        'CREATION',
-        'LASTEDITUSER',
-        'LASTEDITDATE'
+        'cbbo_id',        
+        'cbbo_reference',
+        'dbbo_desc',
+        'cbbo_price',
+        'cbbo_dateini',
+        'cbbo_dateend',
+        'cbbo_toendstock',
+        // 'cbbo_applytolist',
+        // 'cbbo_image',
+        'cbbo_creator',
+        'cbbo_creation',
+        'cbbo_lastedituser',
+        'cbbo_lasteditdate'
       ]
-    }
+    });
   }
 
   private getApiUrl(): string {
